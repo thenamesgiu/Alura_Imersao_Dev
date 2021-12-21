@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title> Imersão Dev Alura - Aula 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="behavior.js"></script>
+  </head>
+  <body >
+  
+    <div  id="topPage" class="container">
+      <h1 class="page-title">
+      Calculadora</h1>
+      <p class="page-subtitle">
+      Descubra qual a sua média de nota de todas as provas, converta moeda e temperatura!
+      </p>
+      <p><img src=" https://media1.giphy.com/media/U2M9PZQ9BZrQvSmBfo/giphy.gif?cid=790b7611bde0840e98bc41338895befaa1cacc20c9e61553&rid=giphy.gif&ct=s%22%3E" class="img-choicesL"><img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><img src=" https://media1.giphy.com/media/U2M9PZQ9BZrQvSmBfo/giphy.gif?cid=790b7611bde0840e98bc41338895befaa1cacc20c9e61553&rid=giphy.gif&ct=s%22%3E" class="img-choicesR"></p>
+    </div>
+    
+    <a href="https://alura.com.br/" target="_blank">
+    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+    <section class="choices-container">
+      <p class="textChoice">Escolha o que deseja calcular</p>
+
+        <button class="nav" onclick="openMedia(), nextSection(), returnbtnVisible()" id="mediabutton">Média</button>
+        <button class="nav" onclick="openGraus(), nextSection(), returnbtnVisible()" id = "grausbutton">Graus</button>
+        <button class="nav" onclick="openMoeda(), nextSection(), returnbtnVisible()" id="moedabutton">Moeda</button>
+    </section>
+    
+    <section id="media">
+      <div class="arrows">
+        <p  onclick="closeMedia()" id="returnarrowMedia">⏺</p>
+        
+      </div>
+      
+      
+      <h2>Calculando média</h2>
+      
+      <form>
+        <div class="align">
+        <label class="questions">Calcule sua média durante o ano. Para começar, quais foram as suas notas durante os bimestres?</label>
+        </div>
+        <div class="numbers">
+        <input type="number" id="nota1" name="notasbimestrais" min="0" max="10" placeholder = "1º" onKeyDown="return false">
+        <input type="number" id="nota2" name="notasbimestrais" min="0" max="10" placeholder = "2º" onKeyDown="return false">
+        <input type="number" id="nota3" name="notasbimestrais" min="0" max="10" placeholder = "3º" onKeyDown="return false">
+        <input type="number" id="nota4" name="notasbimestrais" min="0" max="10" placeholder = "4º" onKeyDown="return false">
+      </div>
+      <div class="align">
+        <button class="submit" type="button" onclick="calculoMedia()">Calcular</button>
+      </div>
+        <p id="resultadomedia" class="results">...</p>
+      </form>
+    </section>
+    <section id="graus">
+      <div class="arrows">
+        <p  onclick="closeGrau()" id="returnarrowGraus">⏺</p>
+      
+      </div>
+      <h2>Convertendo temperatura</h2>
+      <form>
+        <div class="align">
+        <label id="escala" class="questions">Escolha o modo de conversão</label>
+        </div>
+        <div class="numbers" id="temps">
+        <select id="escalatemperatura" name="tempescala">
+          <option value="C">Celsius</option>
+          <option value = "k">kelvin</option>
+          <option value="F">Fahrenheit</option>
+        </select>
+        <p class="mid"> para </p>
+        <select id="tempescolhida" name="escolhatemp">
+          <option value="F">Fahrenheit</option>
+          <option value="C">Celsius</option>
+          <option value = "k">kelvin</option>
+         
+        </select>
+      </div>
+        <div class="align">
+          <input type="text" id="tempChosen" class="textinput" name="tempChosen" placeholder="Insira o valor da temperatura" title="Utilize apenas ponto (.) para números decimais, o uso de vírgula interfere no resultado">
+        </div>
+          <div class="align">
+          <button class="submit" type="button" onclick="conversorTemp()">Converter</button>
+        </div>
+        <p id="resultadotemperatura" class="results">...</p>
+        
+      </form>
+    </section>
+
+    <section id="moeda">
+      <div class="arrows">
+        <p  onclick="closeMoeda()" id="returnarrowMoeda">⏺</p>
+      </div>
+      <h2>Convertendo moeda</h2>
+      <div class="align">
+      <label id="coin" class="questions">Converta qualquer valor em real para as seguintes moedas</label>
+      </div>
+      <div class="align">
+        <select id="moedaescolhas" name="moedasoption">
+          <option value = "D">Dólar</option>
+          <option value="L">Libra esterlina</option>
+          <option value="B">Bitcoin</option>
+        </select>
+      </div>
+      <div class="align">
+        <input type="text" id="valormoeda" class="textinput" name="moedavalor" placeholder="Insira o valor em real" title="Utilize apenas ponto (.) para números decimais, o uso de vírgula interfere no resultado">
+      </div>
+      <div class="align">
+        <button class="submit" type="button" onclick="ConversorMoeda()">Converter</button>
+      </div>
+      <p id="resultadomoeda" class="results">...</p>
+    </section>
+    <div class="align">
+      <button class="back" onclick="returnTopo()" id="backtop">Retornar ao topo</button>
+    </div>
+    
+  </body>
+</html>
